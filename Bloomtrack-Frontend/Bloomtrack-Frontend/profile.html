@@ -489,63 +489,7 @@ margin-top: 3%; /* Adjust this value as needed */
         </div>
     </div>
     <script>
-        /*local storage*/
-//       let firstName = document.getElementById("f-Name");
-// let lastName = document.getElementById("l-Name");
-// let email = document.getElementById("email");
-// let number = document.getElementById("number");
-// let profileAdd = document.querySelector("#profile-add");
-// let profileEdit = document.querySelector(".profile-icon");
 
-// // Function to save user data to localStorage
-// function saveUserData() {
-//     let userData = {
-//         firstName: firstName.value,
-//         lastName: lastName.value,
-//         email: email.value,
-//         number: number.value
-//     };
-//     localStorage.setItem("userProfile", JSON.stringify(userData));
-// }
-
-// // Function to load user data from localStorage
-// function loadUserData() {
-//     let savedData = localStorage.getItem("userProfile");
-//     if (savedData) {
-//         let user = JSON.parse(savedData);
-        
-//         // Hide the form and show the profile
-//         document.querySelector(".get-details").style.display = "none";
-//         document.querySelector(".profile-store").style.display = "block";
-//         document.querySelector(".hrline").style.display = "block";
-//         document.querySelector(".hrlines").style.display = "block";
-//         document.querySelector(".show-item-section").style.display = "block";
-//         document.querySelector(".logout").style.display = "block";
-
-//         // Insert user details into profile-store <p> tags
-//         document.querySelector(".input-details1 p").textContent = user.firstName + " " + user.lastName;
-//         document.querySelector(".input-details2 p").textContent = user.email;
-//         document.querySelector(".input-details3 p").textContent = user.number;
-//     }
-// }
-
-// // Event listener for adding profile
-// profileAdd.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     if (!validateInputs()) {
-//         return;
-//     }
-    
-//     // Save user data
-//     saveUserData();
-
-//     // Hide the form and show the profile
-//     loadUserData();
-// });
-
-// // Load profile data when the page loads
-// window.addEventListener("DOMContentLoaded", loadUserData);
-/*------*/
 
 let profileEdit = document.querySelector(".profile-icon");
 let firstName = document.getElementById("f-Name");
@@ -577,7 +521,9 @@ profileAdd.addEventListener("click", async function (event)
     try {
         const token1 = localStorage.getItem("token");
         console.log("Retrieved Token:", token1);
-        const response = await fetch("http://localhost:3600/user/profile", {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/profile",
+        // const response = await fetch("http://localhost:3600/user/profile",
+         {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -367,143 +367,6 @@ else {
 }
 });
 console.log(total);
-// async function order() {
-//         const token = localStorage.getItem("token");
-//         const address = localStorage.getItem("selectedAddress");
-//         const storedCart = localStorage.getItem("cartData");
-
-//         if (!token) {
-//             alert("User is not authenticated!");
-//             return;
-//         }
-
-//         if (!address || !storedCart) {
-//             alert("Address or cart data is missing!");
-//             return;
-//         }
-
-//         const parsedAddress = JSON.parse(address);
-//         const parsedCart = JSON.parse(storedCart);
-
-//         const requestData = {
-//             addressID: parsedAddress._id,
-//             orderItems: parsedCart.map(item => ({
-//                 productID: item._id,
-//                 qty: item.qty
-//             }))
-//         };
-
-//         try {
-//             const response = await fetch("http://localhost:3600/user/order", {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     "Authorization": "Bearer " + token
-//                 },
-//                 body: JSON.stringify(requestData)
-//             });
-
-//             const result = await response.json();
-//             console.log("Response Status:", response.status);
-//             console.log("Response:", result);
-
-//             if (response.ok) {
-//                 alert("Order placed successfully!");
-//                 localStorage.removeItem("cartData"); 
-//                 window.location.href = "order-success.html"; 
-//             } else {
-//                 alert("Order Failed: " + result.message);
-//             }
-//         } catch (error) {
-//             console.error("Error:", error);
-//             alert("Something went wrong. Please try again.");
-//         }
-//     }
-
-
-
-
-
-    /*******/
-         // Function to retrieve and display addresses
-        //  function displayAddressesInFinalPage() {
-        //     let addressContainer = document.getElementById("address-container");
-        //     addressContainer.innerHTML = "";
-
-        //     let addressList = JSON.parse(localStorage.getItem("addresses")) || [];
-
-        //     if (addressList.length === 0) {
-        //         addressContainer.innerHTML = "<p>No addresses available</p>";
-        //         return;
-        //     }
-
-        //     addressList.forEach((address, index) => {
-        //         let div = document.createElement("div");
-        //         div.classList.add("address-box");
-
-        //         div.innerHTML = `
-                
-        //             <h3>${address.fName} ${address.lName}</h3>
-        //             <h6>${address.hNo}, ${address.Area}, ${address.City}, ${address.State} - ${address.Pincode}</h6>
-        //             <h6>${address.Number}</h6>
-        //             <hr>
-        //         `;
-
-        //         addressContainer.appendChild(div);
-        //     });
-        // }
-// Display Cart Items
-// function displayCartInFinalPage() {
-//             let cartContainer = document.getElementById("cart-container");
-//             cartContainer.innerHTML = "";
-
-//             let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-//             let totalPrice = 0;
-
-//             if (cartItems.length === 0) {
-//                 cartContainer.innerHTML = "<p>No items in cart</p>";
-//                 return;
-//             }
-
-//             cartItems.forEach((item) => {
-//                 let subtotal = item.price * item.quantity;
-//                 totalPrice += subtotal;
-
-//                 let div = document.createElement("div");
-//                 div.classList.add("cart-item");
-
-//                 div.innerHTML = `
-//                     <img src="${item.image}" alt="${item.name}">
-//                     <div class="cart-item-info">
-//                         <h4>${item.name}</h4>
-//                         <p>Price: Rs ${item.price}</p>
-//                         <p>Quantity: ${item.quantity}</p>
-//                         <p>Subtotal: Rs ${subtotal}</p>
-                       
-//                     </div>
-                    
-//                 `;
-
-//                 cartContainer.appendChild(div);
-//             });
-
-//             // Update total price
-//             document.getElementById("final-total").textContent = `RS ${totalPrice}`;
-//         }
-
-//         // Load both addresses and cart items when the page loads
-//         document.addEventListener("DOMContentLoaded", function() {
-//             // displayAddressesInFinalPage();
-//             displayCartInFinalPage();
-//         });
-//         function order(){
-// alert("your order is placed successfully");
-//  // Save order status in localStorage
-//  localStorage.setItem("orderPlaced", "true");
-        
-// window.location.href="products.html";
-//         }
-
 
 
         async function order()
@@ -542,7 +405,9 @@ console.log(total);
     }
 console.log("Token before fetch:", token);
 try{
-    const response = await fetch ("http://localhost:3600/user/order" ,{
+    const response = await fetch ("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/order",
+    // const response = await fetch ("http://localhost:3600/user/order" ,
+    {
         method  : "POST",
         headers : {
             "Content-Type" : "application/json",

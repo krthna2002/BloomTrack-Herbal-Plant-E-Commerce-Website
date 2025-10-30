@@ -450,7 +450,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         window.location.href = "login.html";
         return;
     }try {
-        const response = await fetch("http://localhost:3600/products/cartlist", {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/products/cartlist",
+        // const response = await fetch("http://localhost:3600/products/cartlist", 
+        {
             method: "GET",
             headers: {
                 "Content-type": "application/json",

@@ -17,7 +17,9 @@ forms.addEventListener('submit', async (e) =>
     const passwordVal = password.value.trim();  
 
     try {
-        const res = await fetch("http://localhost:3600/user/auth", {
+       const res = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/auth",
+        // const res = await fetch("http://localhost:3600/user/auth",
+             {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

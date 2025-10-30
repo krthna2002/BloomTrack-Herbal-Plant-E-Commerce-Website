@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function ()
             console.log("Token from localStorage:", token);
 
             try {
-                const response = await fetch("http://localhost:3600/user", {  // Ensure this URL matches your backend
+  const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user",
+                // const response = await fetch("http://localhost:3600/user", 
+                    {  // Ensure this URL matches your backend
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

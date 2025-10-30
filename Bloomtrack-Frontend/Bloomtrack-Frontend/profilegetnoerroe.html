@@ -326,7 +326,9 @@ profileAdd.addEventListener("click", async function (event)
     try {
         const token1 = localStorage.getItem("token");
         console.log("Retrieved Token:", token1);
-        const response = await fetch("http://localhost:3600/user/profile", {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/profile",
+        // const response = await fetch("http://localhost:3600/user/profile",
+         {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -352,16 +354,13 @@ profileAdd.addEventListener("click", async function (event)
          profilemsg();
             localStorage.setItem("userProfile", JSON.stringify(result.userprofiles))
          }
-         
-// fetchUserProfile(userprofiles.f_name,userprofiles.l_name,userprofiles.email,userprofiles.phone);
-// fetchUserProfile();
+
 }
     catch(error){
         console.error("Fetch Error:", error);
         document.querySelector(".alert-error").style.display="block";
         await new Promise((resolve) => setTimeout(resolve, 3000));
         errormsg();
-        // alert("Something went wrong. Please try again.");
     }
 });
 function profilemsg() {
@@ -459,55 +458,6 @@ closeProfile.addEventListener("click",function(){
     window.location.href="profileshow.html";
 });
 
-// profile update
-//  var fnamevar=userprofiles.f_name.value;
-//    var lnamevar=userprofiles.l_name.value;
-//     var emailvar=userprofiles.email.value;
-//     var phonevar=userprofiles.phone.value;
-// const userprofileschange ={
-    
-// };
-/***************/
-// profileAdd.addEventListener("click", async function (event) 
-// {
-//     event.preventDefault();
-// const token = localStorage.getItem("token");
-//  console.log("update"+ token);
- 
-//     if (!token) {
-//         console.error("Error: No token found! User is not authenticated.");
-//         alert("User is not authenticated!");
-//         return;
-//     }
-//     try{
-        
-//  const response = await fetch ("http://localhost:3600/user/profile",
-//  {
-//     method : "PATCH",
-//     headers :
-//     {
-//         "Content-type" :"application/json",
-//          "Authorization" : "Bearer " + token
-//     } 
-//     body : JSON.stringify({
-
-//     })
-
-//  });
-//   if(response.ok){
-   
-// alert("succesfully update profile")
-//   }
-//   else{
-//     console.error("Failed to update profile");
-//     alert("Failed to update profile!");
-//   }
-//     }
-//     catch(error){
-//         console.log("Error updating profile: " , error.message);
-//     }
-// }); 
-/**********#/
 
 </script>
 </body>

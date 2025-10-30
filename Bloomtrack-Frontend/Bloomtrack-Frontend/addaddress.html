@@ -849,7 +849,9 @@ console.log("my details"+addressData.zipcode);
 console.log("my details"+addressData.phone);
     
     try {
-        const response = await fetch("http://localhost:3600/user/address", {
+        const response = await fetch("https://bloomtrack-herbal-plant-e-commerce.onrender.com/user/address",
+        // const response = await fetch("http://localhost:3600/user/address",
+         {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
